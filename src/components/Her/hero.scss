@@ -1,0 +1,177 @@
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
+}
+.hero{
+  height: 100vh;
+ 
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  overflow: hidden;
+}
+.v2 {
+  width: 400px;
+  position: absolute;
+  margin-left: 840px;
+  margin-top: 260px;
+
+  @include mobile {
+    margin-left: 260px; 
+     /* Adjust as needed */
+    margin-top: 320px; /* Adjust as needed */
+    width: 40px; /* Adjust as needed */
+  }
+}
+.v2:hover{
+  transform: scale(1.1);
+}
+a {
+  color: inherit; /* Use the same color as its parent */
+  text-decoration: none; /* Remove underline */
+}
+.v1 {
+  position: absolute;
+  width: 450px;
+  margin-left: 610px;
+  margin-top: 280px;
+
+  @include mobile {
+    margin-top: 300px;
+    margin-left: 300px; /* Adjust as needed */
+     /* Adjust as needed */
+    width: 60px; /* Adjust as needed */
+  }
+}
+
+.hro{
+  position: absolute;
+  margin-top: 140px;
+  margin-left: 800px;
+ 
+  width: 200px;
+
+  
+}
+.hro img {
+  width: 530px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+
+
+  @include mobile {
+    margin-top: 320px;
+    width: 80px;
+    margin-left: -500px;
+        
+  }
+ 
+}
+
+  .wraper {
+    gap: 60px;
+    position: absolute;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 180px;
+  
+    .text {
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      margin-top: -40px;
+  
+      @include mobile {
+        
+      }
+    }
+    .btns{
+      
+      @include mobile {
+        margin-left: -200px;
+        width: 30px;
+        
+        
+      }
+
+    }
+  
+    h1 {
+      font-size: 40px;
+      color: #cbf3f0;
+      letter-spacing: 3px;
+      margin-left: -60px;
+  
+      @include mobile {
+     
+        font-size: 10px;
+        margin-left: -200px;
+      }
+    }
+  
+    h2 {
+      font-size: 30px;
+      color: #cbf3f0;
+      margin-left: -10px;
+      word-spacing: 5px;
+      letter-spacing: 3px;
+      @include mobile {
+        font-size: 10px;
+       
+        margin-left: -200px;
+      }
+    }
+  
+    h3 {
+      margin-left: -80px;
+      margin-top: 3px;
+      font-size: 20px;
+      color: #f4f3ee;
+      @include mobile {
+        
+        font-size: 10px;
+        margin-left: -200px;
+      }
+    }
+  }
+.slidingtext{
+  width: 90%;
+  position: absolute;
+  margin-top: 260px;
+  font-size: 25vh;
+  bottom: 1px;
+  white-space: nowrap;
+  color: #ffffff09;
+  
+  font-weight: bold;
+
+  @include mobile {
+   width: 40%;
+   font-size: 40px;
+  }
+  
+}
+.rot img {
+  width: 30px;
+  position: relative;
+  animation: move 10s infinite linear;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(25vw, 25vh);
+  }
+  50% {
+    transform: translate(50vw, 50vh);
+  }
+  75% {
+    transform: translate(75vw, 75vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+};

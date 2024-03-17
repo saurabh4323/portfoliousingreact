@@ -1,0 +1,89 @@
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
+}
+
+.progress{
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding-top: 50px;
+  text-align: center;
+  color: aqua;
+  h1{
+  font-size: 60px;
+ 
+
+  }
+  .progressBar{
+    position: sticky;
+    
+    height: 10px;
+    background-color: blanchedalmond;
+  }
+}
+.portfolio{
+  position: relative;
+}
+
+.container{
+  margin-left: 400px;
+ 
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  @include mobile {
+   margin-left: 50px;
+   width: 100px;
+        
+  }
+ 
+
+h2{
+  font-size: 40px;
+  margin-left: 140px;
+  color: #ffff00;
+
+  @include mobile {
+    margin-left: 220px;
+  font-size: 30px;
+         
+   }
+}
+
+h3{
+  font-size: 20px;
+  margin-top: 20px;
+  width: 550px;
+  color: #f5ebe0;
+  @include mobile {
+    
+  font-size: 10px;
+  margin-left: 170px;
+  width: 350px;
+
+         
+   }
+}
+}
+
+.imgpro{
+  margin-top: 450px;
+  width: 500px;
+ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin-bottom: 30px;
+
+  @include mobile {
+    
+   width: 360px;
+   margin-left: 180px;
+  
+           
+     }
+}

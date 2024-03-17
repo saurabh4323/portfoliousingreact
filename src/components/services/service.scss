@@ -1,0 +1,138 @@
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
+}
+
+.boxi{
+  width: 250px;
+  height: 200px;
+  display: inline;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  gap: 10px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+
+  @include mobile {
+  width: 150px;
+  height: 200px;
+  align-items: center;
+  margin-left: -570px;
+    
+    
+    /* Adjust as needed */
+  }
+  img{
+    margin-top: 35px;
+    width: 40px;
+    height: auto;
+   
+  }
+}
+.web{
+
+  position: absolute;
+  margin-left: 600px;
+  margin-top: 40px;
+    @include mobile {
+      margin-top: -5px;
+     
+
+      position: absolute;
+
+
+    
+    
+    /* Adjust as needed */
+  }
+
+  
+}
+.boxi:hover{
+  transform:scale(1.1)
+}
+.prog {
+  position: absolute;
+  margin-left: 950px; /* Initial margin-left */
+  margin-top: 250px;
+
+  @include mobile {
+    /* Remove any left margin */
+    left: -420px; 
+    /* Center horizontally */
+    margin-top: 300px;
+    transform: translateX(-50%);
+    transform: translateY(-50%) /* Center horizontally */
+  }
+}
+
+
+
+
+.ui{
+  position: absolute;
+  margin-left: 600px;
+  margin-top: 400px;
+}
+.service{
+  
+  height: 100vh;
+
+}
+.tet h1:hover{
+  transform: scale(1.1);
+}
+.tet{
+  
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 200px;
+
+  h1{
+    font-size: 40px;
+    color: rgb(26, 209, 209);
+
+    @include mobile {
+      font-size: 20px;
+      margin-left: -150px;
+      
+      /* Adjust as needed */
+    }
+  }
+  h2{
+    color: rgb(11, 179, 179);
+    margin-left: 60px;
+    margin-top: 20px;
+    font-size: 20px;
+    @include mobile {
+      font-size: 15px;
+      margin-left: -150px;
+      /* Adjust as needed */
+    }
+  }
+  h3{
+    width: 300px;
+    margin-top: 30px;
+    gap: 2px;
+    font-size: 12px;
+    
+    @include mobile {
+      font-size: 10px;
+      margin-left: -150px;
+      width: 10px;
+      /* Adjust as needed */
+    }
+    
+  }
+  h4{
+    font-size: 12px;
+    @include mobile {
+      font-size: 10px;
+      margin-left: -150px;
+      width: 10px;
+      /* Adjust as needed */
+    }
+  }
+}

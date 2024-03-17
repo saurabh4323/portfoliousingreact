@@ -1,0 +1,156 @@
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
+}
+
+.contact{
+  height: 96vh;
+}
+
+.textcon{
+  width: 500px;
+  
+ 
+  
+  h1{
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 210px;
+    font-size: 70px;
+    color: aquamarine;
+    @include mobile {
+      /* Remove any left margin */
+     margin-left: 20px;
+     font-size: 10px;
+    }
+    
+  }
+  .h{
+    
+    position: absolute;
+    
+    margin-top: 420px;
+     
+    
+    margin-left: 220px;
+    @include mobile {
+      /* Remove any left margin */
+     margin-left: 20px;
+     font-size: 5px;
+     
+    }
+    
+
+    h4{
+      
+      margin-top: 5px;
+
+    }
+  }
+}
+.io{
+  background-color: transparent;
+}
+.left{
+  
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @include mobile {
+    /* Remove any left margin */
+  
+   margin-left: -940px;
+   
+  }
+  
+  form{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    margin-left: 1250px;
+    margin-top: 100px;
+    gap: 20px;
+    @include mobile {
+      /* Remove any left margin */
+    width: 200px;
+     
+     
+    }
+
+    input{
+      box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+      height: 50px;
+      background-color: transparent;
+      font-size: 20px;
+      color: aliceblue;
+      font-family: sans-serif;
+      border: 1px solid;
+      
+    }
+    textarea{
+      border: 1px solid;
+      box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+      font-size: 20px;
+      color: aliceblue;
+      font-family: sans-serif;
+      background-color: transparent;
+
+    }
+   
+  }
+
+}
+.io{
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;}
+
+  
+  
+    .wrapper {
+      max-width: 1366px;
+      margin-left: 700px;
+      margin-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .sau {
+        margin-top: 10px;
+        margin-left: 40px;
+        font-family: "DM Sans", sans-serif;
+      }
+    }
+  
+    .social {
+      margin-top: 60px;
+      display: flex;
+      gap: 20px;
+  
+      a {
+        cursor: pointer;
+        @include mobile {
+          /* Remove any left margin */
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-left: 30px;
+          width: 380px;
+          
+       
+        
+        }
+  
+        img {
+       width: 20px;
+       height: 20px;
+       margin-left: 30px;
+        }
+      }
+    }
+  
+  

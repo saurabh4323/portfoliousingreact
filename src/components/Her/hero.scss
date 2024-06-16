@@ -1,177 +1,194 @@
-@mixin mobile {
-  @media (max-width: 738px) {
-    @content;
-  }
-}
-.hero{
-  height: 100vh;
- 
-  background: linear-gradient(180deg, #0c0c1d, #111132);
-  overflow: hidden;
-}
-.v2 {
-  width: 400px;
-  position: absolute;
-  margin-left: 840px;
-  margin-top: 260px;
-
-  @include mobile {
-    margin-left: 260px; 
-     /* Adjust as needed */
-    margin-top: 320px; /* Adjust as needed */
-    width: 40px; /* Adjust as needed */
-  }
-}
-.v2:hover{
-  transform: scale(1.1);
-}
-a {
-  color: inherit; /* Use the same color as its parent */
-  text-decoration: none; /* Remove underline */
-}
-.v1 {
-  position: absolute;
-  width: 450px;
-  margin-left: 610px;
-  margin-top: 280px;
-
-  @include mobile {
-    margin-top: 300px;
-    margin-left: 300px; /* Adjust as needed */
-     /* Adjust as needed */
-    width: 60px; /* Adjust as needed */
-  }
-}
-
-.hro{
-  position: absolute;
-  margin-top: 140px;
-  margin-left: 800px;
- 
-  width: 200px;
-
-  
-}
-.hro img {
-  width: 530px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-
-
-  @include mobile {
-    margin-top: 320px;
-    width: 80px;
-    margin-left: -500px;
-        
-  }
- 
-}
-
-  .wraper {
-    gap: 60px;
-    position: absolute;
-    margin-left: 260px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 180px;
-  
-    .text {
-      gap: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
-      margin-top: -40px;
-  
-      @include mobile {
-        
-      }
-    }
-    .btns{
-      
-      @include mobile {
-        margin-left: -200px;
-        width: 30px;
-        
-        
-      }
-
-    }
-  
-    h1 {
-      font-size: 40px;
-      color: #cbf3f0;
-      letter-spacing: 3px;
-      margin-left: -60px;
-  
-      @include mobile {
-     
-        font-size: 10px;
-        margin-left: -200px;
-      }
-    }
-  
-    h2 {
-      font-size: 30px;
-      color: #cbf3f0;
-      margin-left: -10px;
-      word-spacing: 5px;
-      letter-spacing: 3px;
-      @include mobile {
-        font-size: 10px;
-       
-        margin-left: -200px;
-      }
-    }
-  
-    h3 {
-      margin-left: -80px;
-      margin-top: 3px;
-      font-size: 20px;
-      color: #f4f3ee;
-      @include mobile {
-        
-        font-size: 10px;
-        margin-left: -200px;
-      }
-    }
-  }
-.slidingtext{
-  width: 90%;
-  position: absolute;
-  margin-top: 260px;
-  font-size: 25vh;
-  bottom: 1px;
-  white-space: nowrap;
-  color: #ffffff09;
-  
-  font-weight: bold;
-
-  @include mobile {
-   width: 40%;
-   font-size: 40px;
-  }
-  
-}
-.rot img {
-  width: 30px;
-  position: relative;
-  animation: move 10s infinite linear;
-}
-
-@keyframes move {
-  0% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(25vw, 25vh);
-  }
-  50% {
-    transform: translate(50vw, 50vh);
-  }
-  75% {
-    transform: translate(75vw, 75vh);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
+import React from "react";
+import "./hero.scss";
+import { motion } from "framer-motion";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import { useEffect } from "react";
+const textvariants = {
+  initial: {
+    x: -700,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
 };
+const bvariants = {
+  initial: {
+    x: 0,
+  },
+  animate: {
+    x: "-220%", // Corrected from x: "-220%"
+    transition: {
+      repeat: Infinity,
+      repeatType: "mirror",
+      duration: 10,
+    },
+  },
+};
+const imgvariants = {
+  initial: {
+    y: 0,
+  },
+  animate: {
+    y: "-220%", // Corrected from x: "-220%"
+    transition: {
+      duration: 10,
+    },
+  },
+};
+const hroAnimationVariants = {
+  initial: {
+    y: "80vh", // Start from bottom
+    x: -150, // Adjust as needed
+    width: 600, // Adjust as needed
+  },
+  animate: {
+    y: -125, // Move to the fixed position
+    x: -150, // Adjust as needed
+    width: 600, // Adjust as needed
+    transition: {
+      delay: 1, // Delay after text and sliding text animations
+      duration: 0.5,
+      type: "spring",
+      damping: 10,
+      stiffness: 70,
+    },
+  },
+  rotate: {
+    rotate: 360, // Rotate 360 degrees
+    transition: {
+      duration: 4, // Every 7 seconds
+      ease: "linear", // Linear easing
+      loop: Infinity, // Repeat infinitely
+    },
+  },
+};
+
+const vAnimationVariants = {
+  initial: {
+    y: "-100vh",
+    x: -150,
+    with: 600, // Start from bottom
+  },
+  animate: {
+    y: -15,
+    x: -10, // Move to the fixed position
+    transition: {
+      delay: 1, // Delay after text and sliding text animations
+      duration: 0.5,
+      type: "spring",
+      damping: 10,
+      stiffness: 70,
+    },
+  },
+};
+const aAnimationVariants = {
+  initial: {
+    y: "-100vh",
+
+    // with:600 // Start from bottom
+  },
+  animate: {
+    y: -5,
+    x: -35, // Move to the fixed position
+    transition: {
+      delay: 1, // Delay after text and sliding text animations
+      duration: 0.3,
+      type: "spring",
+      damping: 10,
+      stiffness: 70,
+    },
+  },
+};
+
+const Hero = () => {
+  useEffect(() => {
+    const rotationInterval = setInterval(() => {
+      document.querySelector(".hro").classList.toggle("rotate");
+    }, 7000);
+    return () => clearInterval(rotationInterval);
+  }, []);
+  return (
+    <div className="hero">
+      <div className="wraper">
+        <motion.div
+          className="text"
+          variants={textvariants}
+          initial="initial"
+          animate="animate"
+        >
+          <motion.h2 variants={textvariants}>Hey! I am</motion.h2>
+          <motion.h1 variants={textvariants}>Saurabh Singh</motion.h1>
+          <motion.h3 variants={textvariants}>
+            Software Engineer and Web Developer
+          </motion.h3>
+        </motion.div>
+        <motion.div
+          variants={textvariants}
+          className="btns"
+          initial="initial"
+          animate="animate"
+        >
+          <Stack spacing={2} direction="row">
+            <Button variant="outlined">
+              <a href="#Contact">Contact me</a>
+            </Button>
+            <Button variant="outlined">
+              <a href="/currentresume.pdf">My-Resume</a>
+            </Button>
+          </Stack>
+        </motion.div>
+      </div>
+      <motion.div
+        className="slidingtext"
+        variants={bvariants}
+        initial="initial"
+        animate="animate"
+      >
+        Saurabh singh
+      </motion.div>
+
+      <motion.div
+        variants={aAnimationVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <img className="v1" src="Vector1.png" alt="" />
+      </motion.div>
+
+      <motion.div
+        className="ri"
+        variants={vAnimationVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <img className="v2" src="Vector2.png" alt="" />
+
+        {/* <img className="hro" src="hero.png" alt=""/>  */}
+      </motion.div>
+      <motion.div
+        className="hro"
+        variants={hroAnimationVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <img src="hero.png" alt="" />
+      </motion.div>
+
+      <div className="rot">
+        <img src="code.png"></img>
+      </div>
+      <div className="rot">
+        <img src="atom.png"></img>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

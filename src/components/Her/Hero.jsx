@@ -136,9 +136,6 @@ const Hero = () => {
           animate="animate"
         >
           <Stack spacing={2} direction="row">
-            <Button variant="contained">
-              <a href="#Service">Work</a>
-            </Button>
             <Button variant="outlined">
               <a href="#Contact">Contact me</a>
             </Button>

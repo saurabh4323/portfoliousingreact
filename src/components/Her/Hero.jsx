@@ -145,47 +145,39 @@ const Hero = () => {
           </Stack>
         </motion.div>
       </div>
-      <motion.div
+      {/* <motion.div
         className="slidingtext"
         variants={bvariants}
         initial="initial"
         animate="animate"
       >
         Saurabh singh
-      </motion.div>
+      </motion.div> */}
+      <div className="img">
+        {/* <motion.div
+          variants={aAnimationVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <img className="v1" src="Vector1.png" alt="" />
+        </motion.div>
 
-      <motion.div
-        variants={aAnimationVariants}
-        initial="initial"
-        animate="animate"
-      >
-        <img className="v1" src="Vector1.png" alt="" />
-      </motion.div>
-
-      <motion.div
-        className="ri"
-        variants={vAnimationVariants}
-        initial="initial"
-        animate="animate"
-      >
-        <img className="v2" src="Vector2.png" alt="" />
-
-        {/* <img className="hro" src="hero.png" alt=""/>  */}
-      </motion.div>
-      <motion.div
-        className="hro"
-        variants={hroAnimationVariants}
-        initial="initial"
-        animate="animate"
-      >
-        <img src="hero.png" alt="" />
-      </motion.div>
-
-      <div className="rot">
-        <img src="code.png"></img>
-      </div>
-      <div className="rot">
-        <img src="atom.png"></img>
+        <motion.div
+          className="ri"
+          variants={vAnimationVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <img className="v2" src="Vector2.png" alt="" />
+        </motion.div> */}
+        <motion.div
+          className="hro"
+          variants={hroAnimationVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <img className="boy" src="hero.png" alt="" />
+        </motion.div>
       </div>
     </div>
   );
